@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const {spawn}= require('child_process');
-const port = 3002;
+const port = process.env.PORT || 3002;
 const path =require('path');
 const app = express();
 app.use(bodyParser.json());
