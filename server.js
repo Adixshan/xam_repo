@@ -51,7 +51,8 @@ app.post('/exam', (req, res) => {
 
 console.log('Toughness:', toughness);
 const exam_path= path.join(__dirname, '..', 'scripts', 'Exam_prediction.py');
-const ExamProcess=spawn('Python',[exam_path,toughness,hour,consist,syllabus,time]);
+  const pythonExecutable = '/usr/bin/python';
+const ExamProcess=spawn(pythonExecutable,[exam_path,toughness,hour,consist,syllabus,time]);
 
 ExamProcess.stdout.on('data',(data)=>{
 const output= data.toString();
