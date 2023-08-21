@@ -50,7 +50,7 @@ app.post('/exam', (req, res) => {
   
 
 console.log('Toughness:', toughness);
-const exam_path= path.join(__dirname, '..', 'server', 'scripts', 'Exam_prediction.py');
+const exam_path= path.join(__dirname, '..', 'scripts', 'Exam_prediction.py');
 const ExamProcess=spawn('Python',[exam_path,toughness,hour,consist,syllabus,time]);
 
 ExamProcess.stdout.on('data',(data)=>{
